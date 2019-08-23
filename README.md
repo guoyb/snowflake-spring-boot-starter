@@ -17,7 +17,5 @@
 6. 可以自定义属性 snow.flake.data 设置数据中心id，范围0-31（包含）
 7. 可以自定义属性 snow.flake.work 设置机器id，范围0-31（包含）
 
-8. 直接在类中注入Snowflake类，调用 snowflake.genId() 即可生成雪花id
-
 
 
