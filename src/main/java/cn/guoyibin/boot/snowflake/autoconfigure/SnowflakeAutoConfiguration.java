@@ -46,7 +46,9 @@ public class SnowflakeAutoConfiguration {
         if (snowflakeProperties.getWork() != null){
             snowflake.setWORK_ID(snowflakeProperties.getWork());
         }
-        logger.info("雪花算法starter组件加载完成！");
+        logger.info("雪花算法starter组件加载完成！开始时间=[{}]", snowflake.getSTART_TIME());
+        logger.info("雪花算法starter组件加载完成！数据中心_ID=[{}]", snowflake.getDATA_ID());
+        logger.info("雪花算法starter组件加载完成！机器_ID=[{}]", snowflake.getWORK_ID());
         return snowflake;
     }
 }

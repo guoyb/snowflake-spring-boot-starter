@@ -126,4 +126,16 @@ public class Snowflake {
     public void setWORK_ID(long WORK_ID) {
         this.WORK_ID = WORK_ID;
     }
+
+    public long getSTART_TIME() {
+        return START_TIME;
+    }
+
+    public long getDATA_ID() {
+        return DATA_ID;
+    }
+
+    public long getWORK_ID() {
+        return WORK_ID;
+    }
 }
