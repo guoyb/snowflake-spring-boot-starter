@@ -2,6 +2,8 @@ package cn.guoyibin.boot.snowflake.autoconfigure;
 
 import cn.guoyibin.boot.snowflake.autoconfigure.core.Snowflake;
 import cn.guoyibin.boot.snowflake.autoconfigure.core.SnowflakeProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(SnowflakeProperties.class)
 public class SnowflakeAutoConfiguration {
+    private static final Logger logger = LoggerFactory.getLogger(SnowflakeAutoConfiguration.class);
 
     @Bean
     @ConditionalOnProperty(prefix = SnowflakeProperties.PREFIX,name = "start")
@@ -43,6 +46,7 @@ public class SnowflakeAutoConfiguration {
         if (snowflakeProperties.getWork() != null){
             snowflake.setWORK_ID(snowflakeProperties.getWork());
         }
+        logger.info("雪花算法starter组件加载完成！");
         return snowflake;
     }
 }
